@@ -10,7 +10,11 @@ public class BuscaListaFilmes {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		System.out.println("Buscador de Filmes no IMDB");
 		
-		String apiKey = "suaAPI";
+		// A chave da Api ficou na classe ApiKey que não está no github:
+		// Caso prefira, apague ou comente a linha do getApikey e faça uma atribuição direta:
+		// String apiKey = "suaApiKey";
+		String apiKey = new ApiKey().getApiKey();
+		
 			
 		HttpRequest request = HttpRequest.newBuilder()
 			      .uri(URI.create("https://imdb-api.com/en/API/Top250Movies/" + apiKey))
